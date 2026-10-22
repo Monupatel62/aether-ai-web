@@ -29,8 +29,11 @@ aether-ai-api, aether-ai-ui-components, aether-ai-sdk types where appropriate.
 - [Dependencies and contracts](docs/DEPENDENCIES_AND_CONTRACTS.md)
 - [Implementation plan and acceptance criteria](docs/IMPLEMENTATION_PLAN.md)
 - [Research and license notes](docs/RESEARCH_AND_LICENSES.md)
+- [Repository-specific technical design and test plan](docs/TECHNICAL_DESIGN.md)
+- [Engineering and commenting standard](docs/ENGINEERING_STANDARD.md)
 - [Work log and decisions](docs/WORKLOG.md)
 - [Master 33-repository catalog](https://github.com/Monupatel62/aether-ai-platform/blob/main/docs/REPOSITORY_CATALOG.md)
+- [Continuity handoff for new chats](https://github.com/Monupatel62/aether-ai-platform/blob/main/docs/WORK_HANDOFF.md)
 
 ## Before coding
 
