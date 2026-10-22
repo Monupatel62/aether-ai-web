@@ -1,6 +1,6 @@
 # Repository specification: aether-ai-web
 
-**Status:** Documentation baseline copied from the Aether AI master specification. Implementation status must be verified separately.
+**Status:** Repository exists; documentation-only on the inspected `main` branch. No application implementation is present in the audited tree.
 
 ## Mission
 
@@ -12,7 +12,7 @@ Presentation only; never store provider secrets or call privileged provider APIs
 
 ## Dependencies and connections
 
-aether-ai-api, aether-ai-ui-components, public SDK/API types.
+aether-ai-api, aether-ai-ui-components, and the generated public client/types from aether-ai-sdk.
 
 ## Owned capabilities
 
