@@ -5,7 +5,6 @@
 - Added repository purpose, project specification, architecture, dependency/contract policy, implementation gates, and research/license notes.
 - No application source code, production configuration, infrastructure, or deployment was added.
 - Reason: Aether AI is planned as a 33-repository ecosystem. Clear ownership and interfaces must be agreed before coding to prevent duplicate responsibilities, circular dependencies, and unsafe cross-service calls.
-- Research references include the official AI DIAL repositories, the existing WoHo AI DevKit repository, and MCP documentation where relevant.
 - Next: review this repo's contracts against the master catalog; resolve open choices in ADRs; only then begin the smallest testable implementation.
 
 ## Ongoing log format
@@ -15,8 +14,6 @@ For each future change, record: date; exact files; why the change is needed; alt
 ## Persistent decisions
 
 - Aether AI is a proposed project name; verify GitHub/domain/trademark availability before public branding.
-- WoHoTech remains a separate project.
-- WoHo AI DevKit is a separate dependency and must not be rewritten as part of Aether AI.
 - A planned repository is not automatically a separately deployed service.
 - No coding starts until documentation and contracts are reviewed.
 
