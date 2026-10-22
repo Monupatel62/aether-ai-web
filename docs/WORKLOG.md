@@ -19,3 +19,10 @@ For each future change, record: date; exact files; why the change is needed; alt
 - WoHo AI DevKit is a separate dependency and must not be rewritten as part of Aether AI.
 - A planned repository is not automatically a separately deployed service.
 - No coding starts until documentation and contracts are reviewed.
+
+## 2026-10-22 — Technical design and navigation
+
+- Added `docs/TECHNICAL_DESIGN.md` with repository-specific proposed internals, dependency connections, failure cases, and test plan.
+- Added `docs/ENGINEERING_STANDARD.md` linking the project-wide code-commenting and engineering rules.
+- Updated README documentation links so a new contributor can find the technical design and continuity handoff.
+- No application source code was added; all changes in this phase are documentation-only.
