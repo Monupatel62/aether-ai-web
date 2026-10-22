@@ -12,12 +12,10 @@ Frontend only; all privileged operations go through aether-ai-api.
 
 ## Dependencies
 
-aether-ai-api, aether-ai-ui-components, aether-ai-sdk types where appropriate.
+aether-ai-api, aether-ai-ui-components, and aether-ai-sdk types where appropriate.
 
 ## Project rules
 
-- Keep WoHoTech separate; this repository belongs to the new Aether AI project.
-- Treat the existing [WoHo AI DevKit](https://github.com/Monupatel62/woho-ai-devkit) as a separate dependency. Do not copy or rewrite it without a reviewed technical reason.
 - No implementation starts until the documentation and cross-repository contracts are reviewed.
 - Do not commit secrets, API keys, user data, or production credentials.
 - Public interfaces, security decisions, and non-obvious implementation choices must be documented.
