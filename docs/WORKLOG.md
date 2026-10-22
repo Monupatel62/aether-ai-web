@@ -26,3 +26,10 @@ For each future change, record: date; exact files; why the change is needed; alt
 - Added `docs/ENGINEERING_STANDARD.md` linking the project-wide code-commenting and engineering rules.
 - Updated README documentation links so a new contributor can find the technical design and continuity handoff.
 - No application source code was added; all changes in this phase are documentation-only.
+
+## 2026-10-22 — Architecture and security audit pass 1
+
+- Added `docs/SECURITY_REVIEW.md` with component-specific trust boundaries, threat scenarios, and verification checklist.
+- Reviewed official MCP 2026-07-28 release notes, OWASP GenAI 2026 Top 10 announcement, OpenTelemetry GenAI conventions, GitHub Actions secure-use guidance, and AI DIAL Core documentation.
+- Master audit and threat model are linked from the platform repository.
+- No application code, production config, or security implementation was added; these are design requirements, not claims of implemented controls.
