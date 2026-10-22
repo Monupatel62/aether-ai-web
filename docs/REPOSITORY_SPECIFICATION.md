@@ -57,10 +57,10 @@ UI routes, typed API client usage, streaming UX, accessibility, error/loading/em
 
 ## Related documentation
 
-- [Master catalog](../REPOSITORY_CATALOG.md)
-- [Architecture](../MASTER_ARCHITECTURE.md)
-- [Implementation roadmap](../IMPLEMENTATION_ROADMAP.md)
-- [Decision log](../DECISION_LOG.md)
+- [Master catalog](https://github.com/Monupatel62/aether-ai-platform/blob/main/docs/REPOSITORY_CATALOG.md)
+- [Architecture](https://github.com/Monupatel62/aether-ai-platform/blob/main/docs/MASTER_ARCHITECTURE.md)
+- [Implementation roadmap](https://github.com/Monupatel62/aether-ai-platform/blob/main/docs/IMPLEMENTATION_ROADMAP.md)
+- [Decision log](https://github.com/Monupatel62/aether-ai-platform/blob/main/docs/DECISION_LOG.md)
 
 ## Research references
 
