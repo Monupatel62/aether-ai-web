@@ -41,7 +41,13 @@ export function createChatController({ client, model, createId, onStateChange = 
       dispatch({ type: "request-started", requestId });
       const messages = state.messages.map(({ role, text: content }) => ({ role, content }));
       try {
-        const response = await client.createChatCompletion({ model, messages }, { signal: controller.signal });
+        const aborted = new Promise((_, reject) => controller.signal.addEventListener("abort", () => {
+          const error = new Error("Request cancelled"); error.code = "request_aborted"; reject(error);
+        }, { once: true }));
+        const response = await Promise.race([
+          Promise.resolve().then(() => client.createChatCompletion({ model, messages }, { signal: controller.signal })),
+          aborted,
+        ]);
         if (activeRequestId !== requestId || controller.signal.aborted) return state;
         const answer = response?.choices?.[0]?.message?.content;
         if (typeof answer !== "string" || answer.length > MAX_PROMPT_CHARS) throw new Error("Invalid assistant response");
