@@ -37,3 +37,10 @@ aether-ai-api, aether-ai-ui-components, and aether-ai-sdk types where appropriat
 ## Before coding
 
 Read the project specification, architecture, contracts, implementation plan, and work log. Update the docs in the same change whenever behavior, an API contract, a dependency, or a security boundary changes.
+
+
+## Implemented code baseline
+
+- Framework-independent chat reducer with bounded message/response sizes, request lifecycle state, stream chunk assembly, cancellation, stale-request suppression, and normalized errors.
+- Node 20/22 CI runs unit tests and syntax validation.
+- This is a state-management foundation, not a finished browser UI. Route components, API integration, visual regression, and browser accessibility checks remain to be built.
