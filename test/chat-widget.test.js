@@ -31,7 +31,7 @@ function fixture(client) {
 }
 
 test("renders accessible conversation and uses text content for assistant output", async () => {
-  const { root, widget, find } = fixture({ createChatCompletion: async () => ({ choices: [{ message: { content: "<img src=x onerror=alert(1)>" } }] }) });
+  const { root, widget, find, findText } = fixture({ createChatCompletion: async () => ({ choices: [{ message: { content: "<img src=x onerror=alert(1)>" } }] }) });
   const region = root.children[0];
   assert.equal(region.attributes.role, "region");
   assert.equal(find("ol").attributes["aria-live"], "polite");
