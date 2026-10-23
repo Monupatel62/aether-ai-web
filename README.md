@@ -37,3 +37,11 @@ aether-ai-api, aether-ai-ui-components, and aether-ai-sdk types where appropriat
 ## Before coding
 
 Read the project specification, architecture, contracts, implementation plan, and work log. Update the docs in the same change whenever behavior, an API contract, a dependency, or a security boundary changes.
+
+
+## Implemented code baseline
+
+- Framework-independent chat reducer with bounded message/response sizes, request lifecycle state, stream chunk assembly, cancellation, stale-request suppression, and normalized errors.
+- Chat controller that calls an injected authenticated SDK client, bounds prompt/output text, and settles cancellation even if the client ignores abort.
+- Accessible DOM widget with labelled region, live conversation updates, safe `textContent` rendering, submit/cancel/reset controls, and lifecycle cleanup.
+- Node 20/22 CI runs unit tests and syntax checks. Framework-specific routing, live browser accessibility/visual regression tests, and real authenticated API integration remain outstanding.

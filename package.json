@@ -1,0 +1,10 @@
+{
+  "name": "@aether-ai/web-state",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/chat-state.js && node --check src/chat-controller.js && node --check src/chat-widget.js"
+  }
+}
