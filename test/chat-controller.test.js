@@ -37,7 +37,7 @@ test("normalizes API failures and resets conversation state", async () => {
   const chat = controller({ createChatCompletion: async () => { throw new Error("private\nprovider detail"); } });
   const failed = await chat.submit("hello");
   assert.equal(failed.status, "error");
-  assert.equal(failed.error, "private provider detail");
+  assert.equal(failed.error, "Unable to complete the request. Please try again.");
   const reset = chat.reset();
   assert.equal(reset.messages.length, 0);
   assert.equal(reset.status, "idle");
