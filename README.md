@@ -42,5 +42,6 @@ Read the project specification, architecture, contracts, implementation plan, an
 ## Implemented code baseline
 
 - Framework-independent chat reducer with bounded message/response sizes, request lifecycle state, stream chunk assembly, cancellation, stale-request suppression, and normalized errors.
-- Node 20/22 CI runs unit tests and syntax validation.
-- This is a state-management foundation, not a finished browser UI. Route components, API integration, visual regression, and browser accessibility checks remain to be built.
+- Chat controller that calls an injected authenticated SDK client, bounds prompt/output text, and settles cancellation even if the client ignores abort.
+- Accessible DOM widget with labelled region, live conversation updates, safe `textContent` rendering, submit/cancel/reset controls, and lifecycle cleanup.
+- Node 20/22 CI runs unit tests and syntax checks. Framework-specific routing, live browser accessibility/visual regression tests, and real authenticated API integration remain outstanding.
