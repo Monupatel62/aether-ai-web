@@ -24,7 +24,7 @@ test("submits authenticated chat through injected client and records assistant r
 });
 
 test("rejects blank prompts and concurrent submissions", async () => {
-  const chat = controller({ createChatCompletion: (_input, { signal }) => new Promise((_, reject) => signal.addEventListener("abort", () => reject(new Error("aborted")), { once: true })) });
+  const chat = controller({ createChatCompletion: () => new Promise(() => {}) });
   await assert.rejects(chat.submit("  "), TypeError);
   const pending = chat.submit("hello");
   await assert.rejects(chat.submit("second"), /already active/);
