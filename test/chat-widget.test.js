@@ -38,7 +38,7 @@ test("renders accessible conversation and uses text content for assistant output
   find("textarea").value = "hello";
   await find("form").dispatch("submit");
   assert.equal(widget.controller.getState().messages[1].text, "<img src=x onerror=alert(1)>");
-  assert.equal(find("span").textContent, "<img src=x onerror=alert(1)>");
+  assert.equal(findText("<img src=x onerror=alert(1)>").textContent, "<img src=x onerror=alert(1)>");
   assert.equal("innerHTML" in find("span"), false);
 });
 
