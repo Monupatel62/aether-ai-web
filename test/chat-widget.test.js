@@ -26,7 +26,8 @@ function fixture(client) {
   let n = 0;
   const widget = mountChatWidget(root, { client, model: "model-a", createId: () => "id-" + (++n) });
   const find = (tag, node = root) => node.tagName === tag ? node : node.children.map((child) => find(tag, child)).find(Boolean);
-  return { root, widget, find };
+  const findText = (text, node = root) => node.textContent === text ? node : node.children.map((child) => findText(text, child)).find(Boolean);
+  return { root, widget, find, findText };
 }
 
 test("renders accessible conversation and uses text content for assistant output", async () => {
@@ -42,14 +43,15 @@ test("renders accessible conversation and uses text content for assistant output
 });
 
 test("cancel button settles a request even when client ignores cancellation", async () => {
-  const { widget, find } = fixture({ createChatCompletion: () => new Promise(() => {}) });
+  const { widget, find, findText } = fixture({ createChatCompletion: () => new Promise(() => {}) });
   find("textarea").value = "hello";
   const pending = find("form").dispatch("submit");
   await Promise.resolve();
-  await find("button").dispatch("click");
+  const cancel = findText("Cancel response");
+  await cancel.dispatch("click");
   await pending;
   assert.equal(widget.controller.getState().status, "idle");
-  assert.equal(find("button").hidden, true);
+  assert.equal(cancel.hidden, true);
 });
 
 test("destroy clears the root and resets the active conversation", () => {
