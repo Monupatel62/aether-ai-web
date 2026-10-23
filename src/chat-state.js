@@ -31,6 +31,8 @@ export function chatReducer(state, action) {
         messages[messages.length - 1] = { ...last, text: last.text + action.text };
       } else {
         if (!ID.test(action.messageId ?? "")) throw new TypeError("messageId is invalid");
+        if (messages.some((message) => message.id === action.messageId)) throw new TypeError("assistant message id conflicts with existing message");
+        if (messages.length >= MAX_MESSAGES) throw new RangeError("conversation message limit reached");
         messages.push({ id: action.messageId, role: "assistant", text: action.text });
       }
       return freeze({ ...state, messages });
