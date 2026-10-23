@@ -2,9 +2,21 @@ import { createChatState, chatReducer } from "./chat-state.js";
 
 const MAX_PROMPT_CHARS = 100_000;
 function safeMessage(error) {
-  const raw = error && typeof error.message === "string" ? error.message : "";
-  const value = raw.replace(/[\r\n\t]+/g, " ").trim();
-  return value && value.length <= 240 ? value : "Unable to complete the request. Please try again.";
+  // Do not reflect arbitrary provider/network messages into the browser: they may contain
+  // upstream URLs, request details, identifiers, or credentials.
+  const code = typeof error?.code === "string" ? error.code : "";
+  const known = {
+    rate_limit_error: "The service is busy. Please try again shortly.",
+    authentication_error: "Your session could not be verified. Please sign in again.",
+    timeout_error: "The request timed out. Please try again.",
+    request_aborted: "The request was cancelled.",
+    network_error: "The service could not be reached. Please try again.",
+  };
+  if (known[code]) return known[code];
+  const raw = typeof error?.message === "string" ? error.message : "";
+  if (raw === "Invalid assistant response" ||
+      raw === "Message must be non-empty and within the character limit") return raw;
+  return "Unable to complete the request. Please try again.";
 }
 
 /**
